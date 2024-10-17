@@ -1,0 +1,409 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+.top-navbar {
+    width: 100%;
+    background-color: white; /* Changed background color to white */
+    color: #003366; /* Adjusted text color for contrast */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed; /* Keep it fixed at the top */
+    z-index: 1000; /* Ensure it stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.top-navbar h2 {
+    margin: 0;
+    flex-grow: 1; /* Allow title to take available space */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    position: relative; /* Position relative for dropdown */
+    margin-right: 20px; /* Add some margin to the right */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Reduced space between user info and profile */
+    cursor: pointer; /* Change cursor to pointer */
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    padding: 5px; /* Add some padding for better click area */
+}
+
+.profile:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}
+
+.profile-pic {
+    width: 30px; /* Adjust size of the profile picture */
+    height: 30px; /* Adjust size of the profile picture */
+    border-radius: 50%; /* Make it circular */
+}
+
+.profile-name {
+    margin-left: 5px; /* Space between picture and name */
+}
+
+.profile i {
+    margin-left: 5px; /* Space between name and dropdown arrow */
+    color: #003366; /* Color for the dropdown arrow */
+    font-size: 1em; /* Adjust size if necessary */
+}
+
+.status button {
+    margin-left: 10px;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px; /* Adjusted padding for the sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    position: fixed; /* Keep sidebar fixed */
+    height: calc(100% - 50px); /* Full height minus the top navbar height */
+    top: 50px; /* Adjust for top navbar height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.sidebar-title {
+    writing-mode: vertical-rl; /* Rotate text */
+    transform: rotate(180deg); /* Flip text */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 1.5em; /* Increase font size */
+    text-align: center; /* Center text */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+.sidebar ul li {
+    margin: 10px 0; /* Reduced margin between items */
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px; /* Add padding for clickable area */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.sidebar ul li a:hover {
+    background-color: #00509e; /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.sidebar ul li a i {
+    margin-right: 15px; /* Space between icon and text */
+    font-size: 1.2em; /* Increase icon size */
+}
+
+.sidebar ul li.active a {
+    background-color: white; /* Set background color to white for active state */
+    color: #003366; /* Change text color to the blue of the sidebar */
+}
+
+.sidebar ul li.active a i {
+    color: #003366; /* Change icon color to match the blue of the sidebar */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 250px; /* Space for the sidebar */
+    margin-top: 60px; /* Adjust for top navbar height */
+}
+
+header {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    width: 100%; /* Ensure it takes the full width */
+    margin-bottom: 20px; /* Optional: Space below the header */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 2em; /* Adjust font size as needed */
+    color: #ED7129; /* Change color if needed */
+}
+
+.summary {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    margin-top: 20px; /* Space above the summary */
+}
+
+.card-container {
+    display: flex;
+    background-color: #1945A3; /* Background color for the container */
+    border-radius: 10px; /* Rounded corners for the container */
+    overflow: hidden; /* Ensure child elements respect the border radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    width: 100%; /* Set the width of the card container */
+    max-width: 1200px; /* Optional: Set a max width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.card {
+    padding: 40px; /* Padding for each card */
+    text-align: center; /* Center text */
+    flex: 1; /* Allow cards to grow equally */
+    background-color: #1945A3; /* Change card color to #1945A3 */
+    color: white; /* Change text color to white for contrast */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    font-size: 1.5em; /* Increase font size for card text */
+}
+
+.card-number {
+    margin-top: 5px; /* Space between text and number */
+    font-weight: bold; /* Make the number bold for emphasis */
+    font-size: 2em; /* Increase font size for better visibility */
+    cursor: pointer; /* Change cursor to pointer */
+    display: inline-block; /* Allow padding and hover effects */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.card-number:hover {
+    color: #ED7129; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+.divider {
+    width: 1px; /* Width of the vertical line */
+    background-color: #ccc; /* Color of the vertical line */
+    height: 60px; /* Height of the vertical line */
+    align-self: center; /* Center the divider vertically */
+    margin: 0 20px; /* Add horizontal margin to increase space between cards */
+}
+
+.today-summary {
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Set background color to black with 70% opacity */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 10px; /* Rounded corners for the background */
+}
+
+.today-summary h2 {
+    color: white; /* Set the text color to white */
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-card {
+    background-color: #ED7129; /* Initial color for the card */
+    color: white; /* Change text color to white for contrast */
+    padding: 30px; /* Increase padding to increase card height */
+    flex: 1; /* Allow cards to grow equally */
+    margin: 0 1px; /* Decrease margin between cards to 1px */
+    text-align: center; /* Center text */
+    border-radius: 10px; /* Rounded corners for the cards */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition for hover effect */
+    max-width: 200px; /* Set a maximum width for the cards */
+    cursor: pointer; /* Change cursor to pointer to indicate clickability */
+}
+
+.summary-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+    background-color: #c65a2e; /* Change color on hover */
+}
+
+.card-content {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.summary-card h3 {
+    font-size: 1em; /* Decrease font size for card title */
+    margin: 0; /* Remove default margin */
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 0.5px; /* Adjust spacing between letters */
+    font-weight: bold; /* Make the text bold */
+}
+
+.card-figure {
+    font-size: 1.8em; /* Decrease font size for card figures */
+    margin: 15px 0 0; /* Increase space above the figures to separate from the heading */
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 0.5px; /* Adjust spacing between letters */
+    cursor: pointer; /* Change cursor to pointer to indicate clickability */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the figures horizontally */
+}
+
+.history {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: fixed; /* Position it below the profile */
+    background-color: white; /* Background color for dropdown */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 1000; /* Ensure it appears above other content */
+    right: 0; /* Align dropdown to the right */
+    top: 100%; /* Position it below the profile button */
+    margin-top: 5px; /* Space between the profile button and dropdown */
+    transform: translateX(-50%); /* Center the dropdown */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.dropdown-content a {
+    color: #003366; /* Text color */
+    padding: 12px 16px; /* Padding for links */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make links block elements */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Background color on hover */
+}
+
+.show {
+    display: block; /* Show the dropdown */
+    z-index: 9999; /* Ensure it appears above other content */
+}
+
+/* Add this to your CSS file */
+.navbar-logo {
+    height: 50px; /* Adjust height as needed */
+    margin-right: 10px; /* Space between logo and text */
+    vertical-align: middle; /* Aligns logo with text */
+}
+
+/* Add this to your CSS file */
+table tbody tr {
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+table tbody tr:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}
+
+/* Add this to your CSS file */
+.main-content {
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-supervisors {
+    background-color: #ff8c00; /* Adjust color as needed */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.search-bar {
+    margin: 20px 0;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 200px;
+}
+
+.add-supervisor {
+    padding: 10px 20px;
+    background-color: #007bff; /* Adjust color as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.export-buttons {
+    margin: 20px 0;
+}
+
+.export-buttons button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: #007bff; /* Adjust color as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.supervisor-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.supervisor-table th, .supervisor-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.status-part-time {
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.status-on-contract {
+    background-color: lightblue;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.status-seasonal {
+    background-color: orange;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.status-full-time {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}

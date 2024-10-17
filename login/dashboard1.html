@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class="top-navbar">
+        <img src="likeminds_logo-removebg-preview.png" alt="Like Minds Logo" class="navbar-logo">
+        <h2>LIKE MINDS COMPANY (SL) LIMITED</h2>
+        <div class="user-info">
+            <span>Welcome, Brima 👋</span>
+            <button class="profile" onclick="toggleDropdown(event)">
+                <img src="bfk.png" alt="Profile Picture" class="profile-pic">
+                <span class="profile-name">Brima F. Kamara</span>
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="#">Profile</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li class="active"><a href="dashboard1.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="supervisor.html"><i class="fas fa-user-tie"></i> Supervisors</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Staff</a></li>
+            <li><a href="#"><i class="fas fa-user-friends"></i> Vendors</a></li>
+            <li><a href="#"><i class="fas fa-user-secret"></i> Accountant</a></li>
+            <li><a href="#"><i class="fas fa-user"></i> Customers</a></li>
+            <li><a href="#"><i class="fas fa-money-bill-wave"></i> Finance</a></li>
+            <li><a href="#"><i class="fas fa-box"></i> Products</a></li>
+            <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Admin Dashboard</h1>
+        </header>
+        <div class="summary">
+            <div class="card-container">
+                <div class="card">
+                    Supervisors<br>
+                    <span class="card-number">34</span>
+                </div>
+                <div class="divider"></div>
+                <div class="card">
+                    Field Officers<br>
+                    <span class="card-number">20</span>
+                </div>
+                <div class="divider"></div>
+                <div class="card">
+                    Vendors<br>
+                    <span class="card-number">87</span>
+                </div>
+                <div class="divider"></div>
+                <div class="card">
+                    Customers<br>
+                    <span class="card-number">122</span>
+                </div>
+            </div>
+        </div>
+        <div class="today-summary">
+            <h2>Today Summary</h2>
+            <div class="summary-cards">
+                <div class="summary-card" onclick="alert('Micro Finance Market Cap Clicked!')">
+                    <div class="card-content">
+                        <h3>Micro Finance Market Cap</h3>
+                        <p class="card-figure">Le 600,000</p>
+                    </div>
+                </div>
+                <div class="summary-card" onclick="alert('Osusu Market Cap Clicked!')">
+                    <div class="card-content">
+                        <h3>Osusu Market Cap</h3>
+                        <p class="card-figure">Le 500,000</p>
+                    </div>
+                </div>
+                <div class="summary-card" onclick="alert('Product Sold Clicked!')">
+                    <div class="card-content">
+                        <h3>Product Sold</h3>
+                        <p class="card-figure">9</p>
+                    </div>
+                </div>
+                <div class="summary-card" onclick="alert('New Customer Clicked!')">
+                    <div class="card-content">
+                        <h3>New Customer</h3>
+                        <p class="card-figure">12</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="history">
+            <h2>History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Start date</th>
+                        <th>End date</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="alert('Scrum Master Clicked!')">
+                        <td>Scrum Master</td>
+                        <td>Dec 4, 2019 21:42</td>
+                        <td>Dec 7, 2019 23:26</td>
+                        <td>Corrected item alignment</td>
+                    </tr>
+                    <tr onclick="alert('Software Tester Clicked!')">
+                        <td>Software Tester</td>
+                        <td>Dec 30, 2019 05:18</td>
+                        <td>Feb 2, 2019 19:28</td>
+                        <td>Embedded analytic scripts</td>
+                    </tr>
+                    <tr onclick="alert('Software Developer Clicked!')">
+                        <td>Software Developer</td>
+                        <td>Dec 30, 2019 07:52</td>
+                        <td>Dec 4, 2019 21:42</td>
+                        <td>High resolution imagery option</td>
+                    </tr>
+                    <tr onclick="alert('UI/UX Designer Clicked!')">
+                        <td>UI/UX Designer</td>
+                        <td>Dec 7, 2019 23:26</td>
+                        <td>Feb 2, 2019 19:28</td>
+                        <td>Enhanced UX for cart quantity updates</td>
+                    </tr>
+                    <tr onclick="alert('Ethical Hacker Clicked!')">
+                        <td>Ethical Hacker</td>
+                        <td>Mar 20, 2019 23:14</td>
+                        <td>Dec 4, 2019 21:42</td>
+                        <td>Cart history fixes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="dashboard1.js"></script>
+    <script>
+        function toggleDropdown(event) {
+            event.stopPropagation();
+            document.getElementById("dropdownMenu").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile') && !event.target.matches('.profile *')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

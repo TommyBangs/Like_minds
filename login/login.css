@@ -1,0 +1,127 @@
+body {
+    background: linear-gradient(to bottom, #FF7E5F, #1945A3); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    margin: 0;
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+.logo {
+    width: 30%; /* Make logo responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px 0; /* Space above and below the logo */
+}
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px; /* Add some padding */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    max-width: 400px; /* Limit the width for larger screens */
+    margin: auto; /* Center the container */
+    text-align: center; /* Center text */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+h1 {
+    font-size: 20px; /* Title size */
+    margin-bottom: 20px; /* Space below title */
+}
+
+select {
+    width: 100%; /* Make inputs and button full width */
+    padding: 10px;
+    margin: 10px 0; /* Add some spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    transition: border-color 0.5s ease-in-out, box-shadow 0.3s ease; /* Smooth transitions */
+    background: linear-gradient(135deg, #e0f7fa, #80deea); /* Gradient background */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size for better readability */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    appearance: none; /* Remove default styling */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,5" fill="%23333"/></svg>'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position the arrow */
+    background-size: 10px; /* Size of the arrow */
+}
+
+select:hover {
+    border-color: #ff7e5f; /* Change border color on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+select:focus {
+    border-color: #ff7e5f; /* Focus border color */
+    outline: none; /* Remove outline */
+    box-shadow: 0 0 5px rgba(255, 126, 95, 0.5), 0 6px 15px rgba(0, 0, 0, 0.3); /* Focus shadow effect */
+}
+
+input {
+    width: 95%; /* Make inputs and button full width */
+    padding: 10px;
+    margin: 10px 0; /* Add some spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    transition: border-color 0.5s ease-in-out, box-shadow 0.3s ease; /* Smooth transitions */
+    background: (135deg, #e0f7fa); /*background */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size for better readability */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    appearance: none; /* Remove default styling */
+}
+
+input:hover {
+    border-color: #ff7e5f; /* Change border color on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+a {
+    display: block; /* Make link a block element */
+    margin: 10px 0; /* Space around link */
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+button {
+    background-color: #007BFF; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    width: 100%; /* Full width */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.forgot-password {
+    display: block;
+    margin: 10px 0;
+    color: #ff7e5f;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    .container {
+        padding: 10px; /* Reduce padding on small screens */
+    }
+}
