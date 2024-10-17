@@ -134,17 +134,65 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    width: 100%; /* Ensure it takes the full width */
-    margin-bottom: 20px; /* Optional: Space below the header */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 20px; /* Space below the header */
 }
 
 header h1 {
+    text-align: center; /* Center the text */
     margin: 0; /* Remove default margin */
-    font-size: 2em; /* Adjust font size as needed */
-    color: #ED7129; /* Change color if needed */
+    color: #ED7129; /* Change the color of the supervisor text */
+}
+
+.total-supervisors {
+    background-color: #ff8c00; /* Adjust color as needed */
+    color: white;
+    padding: 15px 20px; /* Increased padding for size */
+    border-radius: 10px; /* Rounded corners */
+    width: 220px; /* Set a fixed width */
+    text-align: center; /* Center text */
+    margin-top: 10px; /* Space above the total supervisors card */
+    align-self: flex-start; /* Align to the left */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+/* Hover effect for the Total Supervisors card */
+.total-supervisors:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+    color: black; /* Change text color to black on hover */
+}
+
+.supervisor-count {
+    display: block; /* Make the count appear on a new line */
+    font-size: 1.5em; /* Increase font size for emphasis */
+    color: white; /* Keep the count color white */
+}
+
+/* Align export buttons to the right */
+.export-buttons {
+    display: flex; /* Use flexbox for the buttons */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Button styles */
+.export-button-container button {
+    margin-left: 10px; /* Space between buttons */
+    padding: 10px 15px; /* Padding for buttons */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effect */
+}
+
+/* Hover effect for export buttons */
+.export-button-container button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .summary {
@@ -154,14 +202,11 @@ header h1 {
 }
 
 .card-container {
-    display: flex;
-    background-color: #1945A3; /* Background color for the container */
-    border-radius: 10px; /* Rounded corners for the container */
-    overflow: hidden; /* Ensure child elements respect the border radius */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    width: 100%; /* Set the width of the card container */
-    max-width: 1200px; /* Optional: Set a max width for the container */
-    margin: 0 auto; /* Center the container */
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding around the content */
+    margin: 20px 0; /* Margin for spacing */
+    color: white; /* Text color */
 }
 
 .card {
@@ -397,6 +442,120 @@ header {
 
 .status-seasonal {
     background-color: orange;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.status-full-time {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Add this to supervisor.css */
+.controls {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between search bar and buttons */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below the controls */
+}
+
+.search-bar {
+    display: flex; /* Use flexbox for alignment */
+}
+
+.search-bar input {
+    padding: 10px; /* Padding for the input */
+    width: 350px; /* Increased width */
+    border-radius: 20px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border for the input */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.add-supervisor {
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effect */
+}
+
+/* Hover effect for Add Supervisor button */
+.add-supervisor:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.export-buttons {
+    display: flex; /* Use flexbox for the buttons */
+    margin-left: auto; /* Push buttons to the extreme right */
+}
+
+.export-button-container {
+    display: flex; /* Use flexbox for the buttons */
+}
+
+.export-button-container button {
+    margin-left: 10px; /* Space between buttons */
+    padding: 10px 15px; /* Padding for buttons */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effect */
+}
+
+/* Hover effect for export buttons */
+.export-button-container button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.supervisor-table {
+    margin-top: 20px; /* Space above the table */
+}
+
+.styled-table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Remove space between cells */
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+.styled-table thead {
+    background-color: #007bff; /* Header background color */
+    color: white; /* Header text color */
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd; /* Bottom border for rows */
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.status-part-time {
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.status-on-contract {
+    background-color: lightblue;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.status-seasonal {
+    background-color: lightgray;
     padding: 5px;
     border-radius: 5px;
 }
